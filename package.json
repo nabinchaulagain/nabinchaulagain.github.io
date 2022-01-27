@@ -1,0 +1,84 @@
+{
+  "name": "test_project",
+  "version": "1.0.0",
+  "description": "  ",
+  "main": "src/test-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --color  --open --config webpack.dev.js",
+    "build": "NODE_ENV=production webpack  --config webpack.prod.js",
+    "envsub": "envsub config.example.js config.js",
+    "prettier:write": "prettier --config .prettierrc.json \"src/**/*.*\" --write",
+    "lint": "eslint src",
+    "eslint:fix": "eslint src --fix",
+    "eslint:report": "eslint src -f node_modules/eslint-html-reporter/reporter.js -o lint-report.html"
+  },
+  "author": "Nabin Chaulagain",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --config .prettierrc.json --write",
+      "git add"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "@ckeditor/ckeditor5-build-classic": "^16.0.0",
+    "@google-web-components/google-chart": "^5.0.1",
+    "@open-wc/lit-helpers": "^0.3.10",
+    "@vaadin/router": "^1.7.2",
+    "@webcomponents/shadycss": "^1.10.0",
+    "@webcomponents/webcomponentsjs": "^2.4.1",
+    "axios": "^0.19.2",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.2",
+    "cross-storage": "^1.0.0",
+    "css-loader": "^3.6.0",
+    "dotenv": "^8.2.0",
+    "envsub": "^4.0.7",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^4.3.0",
+    "http-status": "^1.4.2",
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "style-loader": "^1.1.3",
+    "terser-webpack-plugin": "^2.3.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2",
+    "workbox-webpack-plugin": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-leapfrog": "^3.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-lit": "^1.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/test-app.js",
+  "sources": ["images/**/*", "src/**/*", "manifest.json"],
+  "builds": [
+    {
+      "name": "es5prod",
+      "preset": "es5-bundled",
+      "addServiceWorker": false
+    }
+  ]
+}
