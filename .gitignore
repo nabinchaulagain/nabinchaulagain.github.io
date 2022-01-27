@@ -9,7 +9,6 @@ bower_components/
 node_modules/
 
 #Polymer-cli builds
-build/
 dist/
 
 # IDEs
